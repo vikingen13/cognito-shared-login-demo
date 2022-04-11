@@ -9,7 +9,8 @@ from aws_cdk import (
     aws_cognito as cognito,
     aws_codecommit as codecommit,
     aws_amplify_alpha as amplify,
-    CfnOutput
+    CfnOutput,
+    CfnParameter
 )
 
 
@@ -17,6 +18,10 @@ class SharedCognitoUserpoolStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        myCognitoDomain = CfnParameter(self, "cognitoDomain", type="String",
+            description="The cognito domain name that shall be unique.")
+
 
         myPool = cognito.UserPool(self, "shared-cognito-userpool",self_sign_up_enabled=True,
         sign_in_aliases=cognito.SignInAliases(
@@ -34,7 +39,7 @@ class SharedCognitoUserpoolStack(Stack):
 
         myDomain = myPool.add_domain("CognitoDomain",
             cognito_domain=cognito.CognitoDomainOptions(
-                domain_prefix="sharedpool21321"
+                domain_prefix=myCognitoDomain.value_as_string
             )
         )
 
