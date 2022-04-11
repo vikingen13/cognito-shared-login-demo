@@ -32,11 +32,11 @@ if __name__ == '__main__':
     myModifiedJson1 = replaceValues(myGeneric,myUserPoolId,myUserPoolDomain,myUserPoolApp1Id,myApp1Domain)
 
     with open("../app1/src/cognitoConf.js","w") as myConfigFile:
-        myConfigFile.write("const cognitoconf ={} ;\n\nexport default cognitoconf;".format(myModifiedJson1))
+        myConfigFile.write("const cognitoconf ={} ;\n\nexport default cognitoconf;".format(json.dumps(myModifiedJson1,indent=4)))
 
 
     #we create the second file
     myModifiedJson2 = replaceValues(myGeneric,myUserPoolId,myUserPoolDomain,myUserPoolApp2Id,myApp2Domain)
     with open("../app2/src/cognitoConf.js","w") as myConfigFile:
-        myConfigFile.write("const cognitoconf ={} ;\n\nexport default cognitoconf;".format(myModifiedJson2))
+        myConfigFile.write("const cognitoconf ={} ;\n\nexport default cognitoconf;".format(json.dumps(myModifiedJson2,indent=4)))
 
