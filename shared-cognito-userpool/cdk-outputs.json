@@ -1,0 +1,10 @@
+{
+  "shared-cognito-userpool": {
+    "App1Domain": "d18wek4gy26kwp.amplifyapp.com",
+    "UserPoolDomain": "https://sharedpool21321.auth.eu-west-1.amazoncognito.com",
+    "UserPoolId": "eu-west-1_Bupz1zZqm",
+    "UserPoolApp2Id": "2jardac3gfgq6qd7llbb5fpdke",
+    "UserPoolApp1Id": "4fp59ous4saag3fvatnu0olft7",
+    "App2Domain": "d33wuvimidjnqn.amplifyapp.com"
+  }
+}
