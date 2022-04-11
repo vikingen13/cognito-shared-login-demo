@@ -1,7 +1,8 @@
 import json
+import copy
 
 def replaceValues(anOriginalDict, aUserPoolId, aDomain, anAppId,anAppDomain):
-    myModifiedDict = anOriginalDict.copy()
+    myModifiedDict = copy.deepcopy(anOriginalDict)
     myModifiedDict["aws_user_pools_id"] = aUserPoolId
     myModifiedDict["aws_user_pools_web_client_id"]=anAppId
     myModifiedDict["oauth"]["domain"]=aDomain
