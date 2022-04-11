@@ -40,4 +40,6 @@ This command will:
 - Remove the link between the folder and GitHub by running "*rm -rf .git*"
 - Push the two files on the two code commit repositories created during the first step. This will automatically build and deploy the applications in Amplify.
 
+The two applications are written in React.
+
 **Important: ** The cognito domain name in parameter shall be unique.
