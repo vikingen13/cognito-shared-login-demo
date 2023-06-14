@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Amplify, { Auth, Hub } from 'aws-amplify';
+import {Amplify, Auth, Hub } from 'aws-amplify';
 import cognitoConf from './cognitoConf';
 
 
