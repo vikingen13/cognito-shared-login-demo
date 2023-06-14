@@ -7,7 +7,7 @@ DeployUserPool:
 	cd shared-cognito-userpool/;source .venv/bin/activate;cdk deploy --parameters cognitoDomain=$(COGNITODOMAIN) --require-approval never --outputs-file ./cdk-outputs.json
 
 CreateCognitoConf:
-	cd common; python populateConfigFile.py
+	cd common; python3 populateConfigFile.py
 
 PushFiles:
 	rm -rf .git/
